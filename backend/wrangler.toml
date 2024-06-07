@@ -1,0 +1,6 @@
+name = "backend"
+compatibility_date = "2023-12-01"
+
+[vars]
+DATABASE_URL="prisma://accelerate.prisma-data.net/?api_key=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhcGlfa2V5IjoiMjViZTY5YzgtNTY5OS00OGJmLTg3MzYtNGM4MTg5MzQ5ZjEzIiwidGVuYW50X2lkIjoiMjE4ZWIzNTJlNjc1N2VlYjdhODI3NmE0NDkzOGQ3MTcyYWM3YTUxYzlkMjYzMzhhOTQ0ZjQzODE2ZWJjOTNkMCIsImludGVybmFsX3NlY3JldCI6ImZkOTgyMDRlLWRiZjMtNDBhYi1hMTdmLTUxMTQwYjEwNGIyZSJ9.t8YY_UvpiLECBALEtzLSCSY4U6gcDgUIgPNdSXCKGSM"
+SECRET_KEY="prod_data_rahul_boltey"

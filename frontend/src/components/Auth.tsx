@@ -16,18 +16,25 @@ export function Auth({ type }: { type: ("signup" | "signin") }) {
         email: "",
         password: ""
     })
- 
+const [message,setMessage]=useState<string|null>(null)
         async function sendData() {
           try{
             setLoading(true)
             const response = await axios.post(`${BACKEND_URL}/api/v1/user/${type === "signup" ? "signup" : "signin"}`, postInputs);
+            
             const jwt = response.data;
+          
+
             localStorage.setItem('token', jwt)
             
             navigate("/blogs")
             setLoading(false)
           }catch(e){
                 console.error("error while fetching data from backend",e)
+                setMessage("Something went wrong. Please try again.");
+                setLoading(false)
+               
+                
           }
         }
     if(loading){
@@ -59,6 +66,11 @@ export function Auth({ type }: { type: ("signup" | "signin") }) {
             {type === "signup" ? "Already have an account?" : "Create an Account"}
             <Link className="underline pl-2" to={type === "signin" ? "/signup" : "/signin"}>{type === "signup" ? "Sign in" : "Sign up"}</Link>
         </div>
+        
+                <div className="text-center text-red-500">
+                    {message}
+                </div>
+            
         {type === "signup" ? <Input label={"Name"} placeholder={"john"} onChange={(e) => {
             setPostInputs({
                 ...postInputs,

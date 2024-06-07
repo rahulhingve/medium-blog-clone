@@ -76,6 +76,7 @@ userRouter.post('/signin', async (c) => {
             where: { email: body.email, password: body.password }
         })
         if (!user) {
+            c.status(401);
             return c.json({
                 error: "wrong email and password"
             })
@@ -86,6 +87,7 @@ userRouter.post('/signin', async (c) => {
             token
         )
     } catch (e) {
+        c.status(500);
         return c.json({
             error: "something went wrong"
         })
