@@ -4,7 +4,7 @@ export function Quote() {
         <div className="flex justify-center">
             <div className="max-w-lg">
                 <div className="text-2xl font-bold">
-                Creativity is the art of seeing the invisible, thinking the unthinkable, and doing the impossible
+                "Creativity is the art of seeing the invisible, thinking the unthinkable, and doing the impossible."
                 </div>
                 <div className="max-w-md mt-2 font-bold">
                 rahul hingve
